@@ -77,4 +77,5 @@ When you add a package with peer deps, add those peer deps explicitly to `packag
   - Subject format is `type(scope): subject`, using feat, fix, refactor, chore, or docs.
   - The body has `## Summary`, `## New Components`, `## Enhanced Components`, and `## Files Changed` sections, and lists every changed file.
   - Write the message to `COMMIT_MESSAGE.md`, run `git commit -F COMMIT_MESSAGE.md`, then delete the file.
+- `simple-chat/` is a standalone, dependency-free Node chat app and batch runner for local and adversarial testing. It uses the developer's `az login` and is rate-limited to stay under the model deployment's TPM. See its README.
 - `.github/skills/*/SKILL.md` holds deeper domain guides (streaming, auth troubleshooting, Bicep, testing, deployment validation). Read the relevant one before working in that area.
