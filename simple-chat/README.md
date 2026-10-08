@@ -22,13 +22,13 @@ All chats and batch runs share one queue:
 
 | Env var | Default | Meaning |
 |---|---|---|
-| `TPM_BUDGET` | 40000 | Keep below the model deployment's tokens-per-minute limit |
-| `RUNS_PER_MINUTE` | 8 | Each workflow run makes about 3–4 model calls; keep `RUNS_PER_MINUTE × 4` below the deployment's requests-per-minute limit |
+| `TPM_BUDGET` | 400000 | Keep below the model deployment's tokens-per-minute limit |
+| `RUNS_PER_MINUTE` | 30 | Each workflow run makes about 3–4 model calls; keep `RUNS_PER_MINUTE × 4` below the deployment's requests-per-minute limit |
 | `INITIAL_TOKEN_ESTIMATE` | 30000 | Assumed cost of the first run |
 | `AI_AGENT_VERSION` | latest | Pin a specific agent/workflow version |
 | `PORT` | 3000 | |
 
-If you raise the deployment's capacity, raise `TPM_BUDGET` to match, for example `$env:TPM_BUDGET=400000; node server.mjs`.
+The defaults assume the gpt-4.1 deployment at 500,000 TPM / 500 RPM. If you change its capacity, set `TPM_BUDGET` to about 80% of the new limit, for example `$env:TPM_BUDGET=40000; node server.mjs` for 50,000 TPM.
 
 ## Logs and batch runs
 

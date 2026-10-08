@@ -39,10 +39,10 @@ const CONFIG = {
   endpoint: env('AI_AGENT_ENDPOINT'),
   agent: env('AI_AGENT_ID'),
   agentVersion: env('AI_AGENT_VERSION', ''), // empty = latest
-  // Keep below the deployment's TPM (gpt-4.1 here: 50,000) to leave headroom.
-  tpmBudget: Number(env('TPM_BUDGET', 40000)),
-  // Workflow runs per minute. Each run makes ~3-4 model calls; deployment RPM is 50.
-  runsPerMinute: Number(env('RUNS_PER_MINUTE', 8)),
+  // Keep below the deployment's TPM (gpt-4.1 here: 500,000) to leave headroom.
+  tpmBudget: Number(env('TPM_BUDGET', 400000)),
+  // Workflow runs per minute. Each run makes ~3-5 model calls; deployment RPM is 500.
+  runsPerMinute: Number(env('RUNS_PER_MINUTE', 30)),
   // Assumed cost of a run before its real usage is known. A diagnosed apple question is ~25k.
   initialEstimate: Number(env('INITIAL_TOKEN_ESTIMATE', 30000)),
 };
